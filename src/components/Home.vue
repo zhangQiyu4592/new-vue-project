@@ -1,7 +1,7 @@
 <template>
   <div class="main-box">
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>Header头部区域</el-header>
       <el-container>
         <el-aside width="200px">
           <div class="left-menu-box" :style="'height:'+asideHeight">
@@ -9,8 +9,8 @@
           </div>
         </el-aside>
         <el-container>
-          <el-main>Main</el-main>
-          <el-footer>Footer</el-footer>
+          <el-main>Main内容主体</el-main>
+          <el-footer>Footer部分</el-footer>
         </el-container>
       </el-container>
     </el-container>
