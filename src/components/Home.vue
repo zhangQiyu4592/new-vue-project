@@ -9,8 +9,8 @@
           </div>
         </el-aside>
         <el-container>
-          <el-main>Main内容主体</el-main>
-          <el-footer>Footer部分</el-footer>
+          <el-main></el-main>
+          <el-footer></el-footer>
         </el-container>
       </el-container>
     </el-container>
@@ -28,17 +28,15 @@ export default {
     }
   },
   beforeMount () {
+    // 之前这里一直不顺利的原因是 html、body的高度需要100%
     this.asideHeight = document.body.clientHeight - 60 + 'px'
     window.onresize = () => {
       this.asideHeight = document.body.clientHeight - 60 + 'px'
     }
-    console.log(11111, document.body.clientHeight, 2222, this.asideHeight)
   },
   mounted () {
-
   },
   methods: {
-
   },
   filters: {
     // getFilterData (data) {
