@@ -4,8 +4,10 @@
       <el-header>Header头部区域</el-header>
       <el-container>
         <el-aside width="200px">
-          <div class="left-menu-box" :style="'height:'+asideHeight">
-            <el-row></el-row>
+          <div id="abc" class="left-menu-box" :style="'height:'+asideHeight">
+            <el-row>
+              <div v-textDirective>77777777</div>
+            </el-row>
           </div>
         </el-aside>
         <el-container>
@@ -19,6 +21,8 @@
 
 <script>
 import { resetHeight } from '../units/index'
+import Vue from 'vue'
+
 export default {
 
   name: 'Home',
@@ -35,15 +39,36 @@ export default {
     }
   },
   mounted () {
+    this.getVueData()
+    // this.vueExtend()
+
+
+    let extendhanler = Vue.extend({
+      template: '<p>vue中的extend，动态子组件构造器，挂载到Dom上,{{a}},{{b}},{{c}}</p>',
+      data: () => {
+        return {
+          a: '第一个data数据',
+          b: '第二个data数据',
+          c: '第三个data数据',
+        }
+      }
+    })
+    new extendhanler().$mount('#abc')
   },
   methods: {
+    vueExtend () {
+
+    },
+    getVueData () {
+      console.log(66, Vue.config)
+    },
   },
   filters: {
     // getFilterData (data) {
-    //   let b = data.split('')
-    //   return b
+    //   return b = data.split('')
     // },
   }
+
 
 
 
@@ -85,6 +110,6 @@ export default {
 
 .left-menu-box {
   width: 100%;
-  background: burlywood;
+  background: #b3c0d1;
 }
 </style>

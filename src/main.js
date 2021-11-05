@@ -20,7 +20,11 @@ Vue.filter('toString1', toString1)
 //   Vue.filter(key, filters[key])
 // })
 
-
+Vue.directive('textDirective',{
+  bind(el,binding,vnode,oldVnode){
+    console.log(443,el,binding,vnode,oldVnode)
+  }
+})
 
 
 
